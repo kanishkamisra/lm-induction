@@ -130,13 +130,14 @@ for i, category in enumerate(base_categories):
             
             # random sampling scheme - globally consistent
             outside_random = random.sample(space, len(within))
+            random_sim = cosine(sampler(stim).mean(0).unsqueeze(0), sampler(outside_random)).mean().item()
             
             # compute feature overlaps (jaccard between feature vectors)
             overlap_within = world.similarity(stim, within).mean().item()
             overlap_similar = world.similarity(stim, outside_similar).mean().item()
             overlap_random = world.similarity(stim, outside_random).mean().item()
             
-            stimuli.append([trial, category, stim, false_stim, within, outside_similar, outside_random, within_sim, sim, overlap_within, overlap_similar, overlap_random])
+            stimuli.append([trial, category, stim, false_stim, len(stim), within, outside_similar, outside_random, within_sim, sim, random_sim, overlap_within, overlap_similar, overlap_random])
             
             trial += 1
 
@@ -151,7 +152,7 @@ for prop in PROPERTIES:
                             lexicon = world.lexicon,
                             device = DEVICE)
         
-        trial, category, stim, false_stim, within, outside_similar, outside_random, within_sim, outside_sim, overlap_within, overlap_similar, overlap_random = stimulus
+        trial, category, stim, false_stim, n, within, outside_similar, outside_random, within_sim, similar_sim, random_sim, overlap_within, overlap_similar, overlap_random = stimulus
         
         if BALANCED:
             labels = torch.tensor([1] * len(stim) + [0] * len(false_stim))
@@ -178,9 +179,9 @@ for prop in PROPERTIES:
             'outside_random': logprob_random.mean().item()
         }
 
-        results.append([trial, MODEL, prop, category, within_sim, outside_sim, overlap_within, overlap_similar, overlap_random, reasoner.stopping_epoch, result['within'], result['outside_similar'], result['outside_random']])
+        results.append([trial, MODEL, prop, category, n, within_sim, similar_sim, random_sim, overlap_within, overlap_similar, overlap_random, reasoner.stopping_epoch, result['within'], result['outside_similar'], result['outside_random']])
 
 with open(f'../data/results/{MODEL}-induction-tg.csv', 'w') as f:
     writer = csv.writer(f)
-    writer.writerow(['trial', 'model', 'property', 'category', 'within_similarity', 'outside_similarity', 'overlap_within', 'overlap_similar', 'overlap_random', 'stopping_epoch', 'logprob_within', 'logprob_similar', 'logprob_random'])
+    writer.writerow(['trial', 'model', 'property', 'category', 'n', 'similarity_within', 'similarity_similar', 'similarity_random', 'overlap_within', 'overlap_similar', 'overlap_random', 'stopping_epoch', 'logprob_within', 'logprob_similar', 'logprob_random'])
     writer.writerows(results)
