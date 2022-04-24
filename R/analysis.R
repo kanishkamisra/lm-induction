@@ -5,7 +5,7 @@ library(lme4)
 library(lmerTest)
 
 theme_misra <-
-  theme_bw(base_size = 17, base_family = "Times") +
+  theme_bw(base_size = 17, base_family = "Times New Roman") +
   theme(
     legend.title = element_blank(),
     legend.position = "top",
@@ -28,12 +28,12 @@ theme_misra_no_grid <-
   )
 
 final_results <- bind_rows(
-  fs::dir_ls("data/results/") %>%
+  fs::dir_ls("data/results/", regexp = "-induction-tg.csv") %>%
     map_df(read_csv)
 ) %>%
-  group_by(model, property) %>%
-  mutate(n = rep(1:5, 60)) %>%
-  ungroup() %>%
+  # group_by(model, property) %>%
+  # # mutate(n = rep(1:5, 60)) %>%
+  # ungroup() %>%
   pivot_longer(
     contains(c("overlap", "similarity", "logprob")),
     names_to = c("metric", "generalization"),
@@ -49,7 +49,7 @@ final_results <- bind_rows(
     ),
     category = str_remove(category, "\\.n\\.01")
   ) %>%
-  filter(category != "mollusk") %>%
+  # filter(category != "mollusk") %>%
   mutate(generalization = factor(generalization, levels = c("within", "similar", "random"), labels = c("Within", "Similar", "Random")))
 
 
@@ -67,7 +67,8 @@ final_results %>%
   #   logprob = (logprob - min(logprob))/(max(logprob) - min(logprob))
   # ) %>%
   ungroup() %>%
-  group_by(model,  n, generalization, property) %>%
+  # group_by(model,  n, generalization, property) %>%
+  group_by(model,  n, generalization) %>%
   summarize(
     ste = 1.96 * plotrix::std.error(logprob),
     log_prob = mean(logprob)
@@ -77,14 +78,15 @@ final_results %>%
   geom_point(size = 2) +
   geom_line(size = 0.7) +
   geom_ribbon(aes(ymin = log_prob - ste, ymax = log_prob + ste), color = NA, alpha = 0.2) +
-  facet_grid(model ~ property) +
+  # facet_grid(model ~ property) +
+  facet_wrap(~model) +
   # scale_y_continuous(breaks = c(0.7, 0.75, 0.8, 0.85, 0.9, 0.95), limits = c(0.70, 0.96)) +
   scale_color_brewer(type = "qual", palette = "Dark2", direction = -1, aesthetics = c("color", "fill"), labels = c("Within", "Outside<sub><i>similar</i></sub>", "Outside<sub><i>random</i></sub>")) +
   # scale_color_manual(values = c("#5e3c99", "#e66101", "#417D7A"), aesthetics = c("color", "fill")) +
   theme_misra +
   labs(
     x = "Number of Adaptation Concepts",
-    y = "Generalization Score"
+    y = "Generalization"
   )
 
 ggsave("figures/generalization.pdf", width = 5.2, height = 3.7, device = cairo_pdf, dpi = 300)
@@ -185,4 +187,53 @@ summary(fit)
 
 anova(null, fit)
 
+# teasing apart overlaps and category membership
 
+tease <- read_csv("data/results/tease_apart.csv") %>%
+  mutate(
+    model = case_when(
+      model == "axxl-property" ~ "ALBERT-xxl",
+      model == "rl-property" ~ "RoBERTa-large",
+      model == "bl-property" ~ "BERT-large"
+    )
+  )
+
+tease %>%
+  pivot_longer(within:outside, names_to = "conclusion", values_to = "logprob") %>%
+  mutate(
+    conclusion = factor(conclusion, levels = c("within", "outside"), labels = c("Within", "Outside"))
+  ) %>%
+  group_by(model, conclusion) %>%
+  summarize(
+    ste = 1.96 * plotrix::std.error(logprob),
+    logprob = mean(logprob)
+  ) %>%
+  ggplot(aes(model, logprob, color = conclusion, fill = conclusion, group = conclusion)) +
+  geom_col(position = position_dodge(), alpha = 0.8, width=0.7) +
+  geom_linerange(aes(ymin = logprob - ste, ymax = logprob + ste), position = position_dodge(width = 0.7), color = "black") +
+  scale_color_manual(values = c("#7570b3", "#d95f02"), aesthetics = c("color", "fill")) +
+  # scale_color_brewer(type = "qual", palette = "Dark2", direction = -1, aesthetics = c("color", "fill")) +
+  scale_y_continuous(limits = c(-0.41, 0)) +
+  theme_misra_no_grid +
+  labs(
+    x = "Model",
+    y = "Generalization"
+  )
+
+ggsave("figures/teaseapart.pdf", width = 5, height = 3, device = cairo_pdf, dpi = 300)
+
+
+test_results <- tease %>%
+  group_by(model) %>%
+  nest() %>%
+  mutate(
+    t_test = map(data, function(x) {
+      t.test(x$within, x$outside, paired = TRUE) %>%
+        tidy()
+    })
+  ) %>%
+  select(-data) %>%
+  unnest(t_test)
+
+# benjamini-hochberg FDR correction.
+p.adjust(test_results$p.value, method = "BH")
