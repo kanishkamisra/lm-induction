@@ -182,7 +182,7 @@ summary(fit)
 
 null <- lmer(logprob ~ n + overlap + similarity + (1|property), data = x)
 summary(null)
-fit <- lmer(logprob ~ n + overlap * similarity + (1|property) , data = x)
+fit <- lmer(logprob ~ n + overlap + (1|property) , data = x)
 summary(fit)
 
 anova(null, fit)
@@ -213,7 +213,7 @@ tease %>%
   geom_linerange(aes(ymin = logprob - ste, ymax = logprob + ste), position = position_dodge(width = 0.7), color = "black") +
   scale_color_manual(values = c("#7570b3", "#d95f02"), aesthetics = c("color", "fill")) +
   # scale_color_brewer(type = "qual", palette = "Dark2", direction = -1, aesthetics = c("color", "fill")) +
-  scale_y_continuous(limits = c(-0.41, 0)) +
+  # scale_y_continuous(limits = c(-0.41, 0)) +
   theme_misra_no_grid +
   labs(
     x = "Model",
