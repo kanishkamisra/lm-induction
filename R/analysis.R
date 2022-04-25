@@ -171,7 +171,7 @@ final_results %>%
 
 
 x <- final_results %>%
-  filter(model == "ALBERT-xxl") %>%
+  filter(model == "RoBERTa-large") %>%
   group_by(property) %>%
   mutate(overlap = scale(overlap, scale = FALSE), similarity = scale(similarity, scale = FALSE)) %>%
   ungroup()
@@ -180,7 +180,7 @@ fit <- lm(logprob ~ n + overlap * similarity, data = x)
 summary(fit)
 
 
-null <- lmer(logprob ~ n + overlap + similarity + (1|property), data = x)
+null <- lmer(logprob ~ n + overlap * similarity + (1|property) + (1|trial), data = x)
 summary(null)
 fit <- lmer(logprob ~ n + overlap + (1|property) , data = x)
 summary(fit)
@@ -201,7 +201,7 @@ tease <- read_csv("data/results/tease_apart.csv") %>%
 tease %>%
   pivot_longer(within:outside, names_to = "conclusion", values_to = "logprob") %>%
   mutate(
-    conclusion = factor(conclusion, levels = c("within", "outside"), labels = c("Within", "Outside"))
+    conclusion = factor(conclusion, levels = c("within", "outside"), labels = c("Taxonomic", "High Overlap"))
   ) %>%
   group_by(model, conclusion) %>%
   summarize(
