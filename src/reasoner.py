@@ -31,7 +31,7 @@ class Reasoner:
         #         param.requires_grad = False
         raise NotImplementedError
         
-    def adapt(self, premise: dict, labels: torch.Tensor, max_epochs: int = 20) -> None:
+    def adapt(self, premise: dict, labels: torch.Tensor, max_epochs: int = 20, constraint: str = 'accuracy') -> None:
         self.model.train()
         
         premise = premise.to(self.device)
@@ -52,10 +52,11 @@ class Reasoner:
 
             accuracy = accuracy_score(labels.tolist(), log_probs.argmax(1).tolist())
             self.accuracies.append(accuracy)
-            if accuracy == 1.0:
-                self.stopping_epoch = epoch+1
-                self.loss = loss
-                break
+            if constraint == 'accuracy':
+                if accuracy == 1.0:
+                    self.stopping_epoch = epoch+1
+                    self.loss = loss
+                    break
 
         self.model.eval()
     
