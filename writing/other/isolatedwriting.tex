@@ -1,0 +1,185 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage{cogsci}
+
+\cogscifinalcopy % Uncomment this line for the final submission 
+
+% \usepackage{times}
+% \cogscifinalcopy % Uncomment this line for the final submission 
+
+
+% \usepackage{pslatex}
+\usepackage{times}
+\usepackage{apacite}
+\usepackage{float} % Roger Levy added this and changed figure/table
+                   % placement to [H] for conformity to Word template,
+                   % though floating tables and figures to top is
+                   % still generally recommended!
+
+%\usepackage[none]{hyphenat} % Sometimes it can be useful to turn off
+%hyphenation for purposes such as spell checking of the resulting
+%PDF.  Uncomment this block to turn off hyphenation.
+\usepackage{graphicx}
+% \usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{epigraph}
+\usepackage{natbib}
+\usepackage{misra}
+\usepackage{mathbbol}
+\usepackage[OT1]{fontenc}
+% \usepackage{natbib}
+
+% \DeclareSymbolFont{letters}     {OML}{cmm} {m}{it}
+% \DeclareMathAlphabet\mathcal{OMS}{cmsy}{m}{n}
+% \SetMathAlphabet\mathcal{bold}{OMS}{cmsy}{b}{n}
+% \renewcommand\sfdefault{cmss}
+
+\definecolor{yello}{HTML}{ffb677}
+\definecolor{blu}{HTML}{005082}
+\definecolor{purpl}{HTML}{726a95}
+\definecolor{orang}{HTML}{ff9a76}
+\definecolor{tealish}{HTML}{1aa6b7}
+
+\newcommand\BibTeX{B\textsc{ib}\TeX}
+
+\newcommand{\ake}[1]{\textcolor{blue}{$_{AE}$[#1]}}
+\newcommand{\km}[1]{\textcolor{purple}{$_{KM}$[#1]}}
+\newcommand{\todo}[1]{\textcolor{purple}{$_{todo}$[#1]}}
+\newcommand{\new}[1]{\textcolor{blu}{#1}}
+\newcommand{\blank}{$\rule{0.6cm}{0.15mm}$}
+
+\newcommand{\source}{\mathcal{S}}
+\newcommand{\adaptation}{\mathcal{A}}
+\newcommand{\generalization}{\mathcal{G}}
+\newcommand{\concepts}{\mathcal{C}}
+\newcommand{\properties}{\mathcal{P}}
+\newcommand{\true}{\mathsf{True}}
+\newcommand{\false}{\mathsf{False}}
+
+\newcounter{argument}
+% \counterwithin{argument}{equation}
+\Roman{argument}
+\newenvironment{argument}[2]{\refstepcounter{argument}\equation\begin{tabular}{@{}l@{}}
+        #1 \\ \midrule #2
+    \end{tabular}}{\tag{\roman{argument}}\endequation}
+
+
+% \newcommand{\induction}[2]{% \logicarg{<premise>}{<conclusion>}
+% \begin{equation}
+%     \begin{tabular}{@{}l@{}}
+%         #1 \\ \midrule #2
+%     \end{tabular}%
+% \end{equation}
+% %   \begin{tabular}{@{}l@{}}
+% %     #1 \\ \midrule #2
+% %   \end{tabular}%
+% }
+
+
+\setlength\titlebox{4.5cm}
+% You can expand the titlebox if you need extra space
+% to show all the authors. Please do not make the titlebox
+% smaller than 4.5cm (the original size).
+%%If you do, we reserve the right to require you to change it back in
+%%the camera-ready version, which could interfere with the timely
+%%appearance of your paper in the Proceedings.
+
+% \raggedbottom
+\setlength{\parskip}{0pt}
+\makeatletter
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}{4}%
+  {\z@}{1ex \@plus 1ex \@minus .2ex}{-1em}%
+  {\normalfont\normalsize\bfseries}%
+}
+\makeatother
+
+\title{A Property Induction Framework for Neural Language Models}
+ 
+\author{
+{\large \bf Kanishka Misra,$^\textbf{1}$ Julia Taylor Rayz,$^\textbf{1}$ and Allyson Ettinger$^\textbf{2}$}\\
+\texttt{kmisra@purdue.edu, jtaylor1@purdue.edu, aettinger@uchicago.edu} \\
+  $^1$Department of Computer and Information Technology,
+  Purdue University, IN, USA \\
+  $^2$Department of Linguistics, University of Chicago, IL, USA
+}
+
+\begin{document}
+
+\maketitle
+
+
+
+\section{Property Judgment Experiment}
+This experiment focuses on the first stage of the proposed induction framework. Here, we fine-tune pre-trained LMs to judge the truth of sentences that link concepts to properties. 
+Since our setup keeps the training and the evaluation data perfectly disjoint in terms of properties (as we will show), we expect that a model must constrain its parameters to rely on previously encoded property knowledge in order to succeed. Here we test the extent to which this indeed is the case. 
+\paragraph{Property Knowledge Data}
+To construct sentences that express property knowledge, we rely on a property-norm dataset collected by the Cambridge Centre for Speech, Language, and the Brain \citep[CSLB;][]{devereux2014centre}.
+The CSLB dataset was collected by asking 123 human participants to annotate properties for a set of 638 concepts, and this dataset has been used in several
+% a number of 
+studies focused on investigating conceptual knowledge in word representations learned by computational models of text \citep[e.g., ][]{lucy-gauthier-2017-distributional, da-kasai-2019-cracking, bhatia2020transformer}.
+Property-norm datasets consist of data about what properties apply to a given concept, and therefore lack negative concept-property associations. 
+As a result, the aforementioned works \citep{lucy-gauthier-2017-distributional, da-kasai-2019-cracking, bhatia2020transformer} randomly sample concepts for which a particular property was not elicited and take them as negative instances for that property (e.g., using \textsc{table, chair, shirt} are negative instances for the property \textit{can breathe}). These negative instances can then be used in a standard machine-learning setting to evaluate a given representation-learning model.
+
+% \ake{The description of all of this data cleaning maybe belongs in its own section, if it's not a part of this experiment per se?} 
+Upon careful inspection of the CSLB dataset, we found that the above practice may unintentionally introduce incorrect data.
+Datasets such as CSLB are collected through human elicitation of properties for a given concept,
+so it is possible for inconsistencies to arise. One way this may happen is when some participants choose not to include properties that are obvious for the presented concept (e.g., \textit{breathing} in case of living organisms), while other participants do, resulting in an imbalance that can be left unaccounted for.
+% so it is possible that there are cases when a property was not elicited for some concepts -- we suspect 
+We found that this was indeed the case: e.g., the property \textit{has a mouth} was only elicited for 6 animal concepts (out of 152), and so all other animals in the dataset would have been added to the negative search space for that property during sampling, thereby propagating incorrect and incomplete data. This indicates a potential pitfall of directly using property-norm datasets to investigate semantic representations---and suggests that prior evaluations and analyses \citep{lucy-gauthier-2017-distributional, da-kasai-2019-cracking, bhatia2020transformer} may have falsely rewarded or penalized models in some cases.
+To mitigate this issue, we first selected the concept categories \citep[hand-annotated by][e.g., \textsc{bird, vehicle, tree}, etc.]{devereux2014centre} that had at least 9 concepts in the dataset and were not labelled as ``miscellaneous,'' resulting in 24 different categories with a total of 538 unique noun concepts, and 4{,}970 unique properties.
+Next, we manually removed concepts and properties that contained proper nouns (e.g., \textsc{rolls-royce}, \textit{is in Harry Potter}), stereotypical or subjective data (e.g., \textit{is meant for girls}, \textit{is ugly}), and explicit mentions of similarity or relatedness (e.g., \textit{is similar to horse}). We further normalized properties that were paraphrases of each other (e.g., \textit{is used to flavor, does flavor} $\rightarrow$ \textit{is used to flavor}). This resulted in 530 concepts and  3{,}873 properties.
+Again through manual annotation, we further identified a total of 234 properties that were incompletely annotated (i.e., those that were associated with certain concepts but were omitted for many relevant concepts during data collection -- e.g., \textit{can grow} was missing for all invertebrates) and we extended the coverage for these properties. 
+While this may seem like a small number (6\% of the valid properties), it greatly increases the total number of concept-property pairs (from 13{,}355 pairs to 22{,}046: an increase of 65\%) since many of the incompletely labelled properties were applicable across several categories (e.g., \textit{has a mouth, can grow,} etc).
+
+% Using the 530 concepts ($\concepts$) and 3{,}873 properties ($\properties$), we generate 
+Instead of randomly sampling negative concepts for each of our 3{,}873 properties ($\properties$), we sample concepts that are similar to those associated with a particular property---e.g., for the concept \textsc{zebra}, we want to use \textsc{horse} for a negative sample rather than something random such as \textsc{table}.
+By doing so, we make the property judgment tasks increasingly difficult, increasing the chances that the models that we obtain from this stage are indeed focusing on conceptual knowledge to make property judgments instead of relying on simpler superficial cues such as lexical co-occurrence \citep{mccoy-etal-2019-right}.  
+To this end, we first create a taxonomy of our 530 concepts ($\concepts$) by identifying their WordNet \citep{miller1995wordnet} senses.
+Then, for each property---associated with $k$ different concepts---we perform a weighted sampling from the set of leftover concepts (with size $530-k$), where each leftover concept is assigned a weight proportional to its \textit{Wu-Palmer similarity} \citep[a commonly used taxonomic similarity computed over the subset of wordnet taxonomy;][]{wu-palmer-1994-verb} with every concept associated with the property. 
+This results in a set of negative concept-property pairs that is equal in size to our positive set.
+We then follow the method outlined by \citet{bhatia2020transformer} to convert our concept-property pairs into 22{,}046 true and 22{,}046 false property knowledge sentences.
+% \footnote{this involves minimal modification since most of our properties are already represented as well-formed verb-phrases.}
+Finally, we split our 44{,}092 sentence-label pairs into training, validation, and testing sets (80/10/10 split), such that the testing and validation sets are only composed of properties that have never been encountered during training (properties between training and validation sets are also disjoint). 
+We do this to avoid data leaks, and to ensure that we evaluate models on their capacity to learn property judgment as opposed to memorization of the particular words and properties in the training set. 
+% task.
+We make our entire filtering pipeline and negative sample generation algorithm available at (url hidden).
+
+
+\section{Main points}
+\begin{itemize}
+    \item Describe experiment and purpose
+    \item Data construction CSLB - convert into sentences.
+    \item Problems in using them directly -- absence of evidence is not evidence of absence.
+    \begin{itemize}
+        \item Example: only 6 animal concepts in the dataset have \textit{can breathe} as an elicited feature (out of 152). So we end up inducing many false negatives in the final data.
+        \item We first restrict the analyses to the categories (as annotated by the original authors) with at least 9 subordinate concepts. Additionally, we further remove proper noun concepts and (all the property shit). This  leaves us with 521 concepts and () properties. Within this, we identify 
+    \end{itemize}
+\end{itemize}
+
+game plan: describe experiment - fine-tune LMs to evaluate the truth of sentences attributing properties to concepts -- i.e., we want our models to map the sentence \textit{a cat has fur} to $\true$ and \textit{a cat can fly} to $\false$. In brief, we use an existing semantic property norm dataset to construct our sentences and split them into disjoint evaluation sets, where the properties we test the model on are strictly different from those the model sees during fine-tuning. Therefore, a model must learn to rely on its `prior' (pre-trained) property knowledge in combination with task specific information it picks up during fine-tuning in order to succeed on this task. 
+\paragraph{Property Knowledge Data} To construct sentences that express property knowledge, we rely on a property-norm dataset collected by the Cambridge Centre for Speech, Language, and the Brain \citep[CSLB;][]{devereux2014centre}.
+The CSLB dataset was collected by asking 123 human participants to elicit properties for a set of 638 concepts, and this dataset has been used in several studies focused on investigating conceptual knowledge in word representations learned by computational models of text \citep[e.g., ][]{lucy-gauthier-2017-distributional, da-kasai-2019-cracking, bhatia2020transformer}.
+Importantly, property-norm datasets such as CSLB only consist of properties that are applicable for a given concept and lack negative property-concept associations.
+As a result, the aforementioned works \citep{lucy-gauthier-2017-distributional, da-kasai-2019-cracking, bhatia2020transformer} sample concepts for which a particular property was not elicited and take them as negative instances for that property (e.g., using \textsc{table, chair, shirt} are negative instances for the property \textit{can breathe}), which can then be used in a standard machine-learning setting to evaluate a given representation-learning model.
+
+Upon careful inspection of the CSLB dataset, we found that the above practice may unintentionally introduce incorrect or inconsistent data.
+In particular, we observed many cases where properties were inconsistently elicited for concepts -- e.g., , 
+% some participants chose not to include properties that were obvious for the presented concept (e.g., \textit{breathing} in case of living organisms), while other participants do, resulting in an imbalance that can be left unaccounted for.
+% so it is possible that there are cases when a property was not elicited for some concepts -- we suspect 
+We found that this was indeed the case: e.g., the property \textit{has a mouth} was only elicited for 6 animal concepts (out of 152), and so all other animals in the dataset would have been added to the negative search space for that property during sampling, thereby propagating incorrect and incomplete data. This indicates a potential pitfall of directly using property-norm datasets to investigate semantic representations---and suggests that prior evaluations and analyses \citep{lucy-gauthier-2017-distributional, da-kasai-2019-cracking, bhatia2020transformer} may have falsely rewarded or penalized models in cases where this problem was observed.
+
+\bibliographystyle{apacite}
+
+\setlength{\bibleftmargin}{.125in}
+\setlength{\bibindent}{-\bibleftmargin}
+
+\bibliography{CogSci_Template}
+
+\end{document}

@@ -171,7 +171,7 @@ final_results %>%
 
 
 x <- final_results %>%
-  filter(model == "RoBERTa-large") %>%
+  filter(model == "ALBERT-xxl") %>%
   group_by(property) %>%
   mutate(overlap = scale(overlap, scale = FALSE), similarity = scale(similarity, scale = FALSE)) %>%
   ungroup()
@@ -182,6 +182,10 @@ summary(fit)
 
 null <- lmer(logprob ~ n + overlap * similarity + (1|property) + (1|trial), data = x)
 summary(null)
+anova(null)
+
+broom.mixed::tidy(null) %>% View()
+
 fit <- lmer(logprob ~ n + overlap + (1|property) , data = x)
 summary(fit)
 

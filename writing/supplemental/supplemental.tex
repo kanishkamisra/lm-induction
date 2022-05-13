@@ -1,0 +1,294 @@
+\documentclass[11pt]{article}    % <--- 12pt font
+\usepackage[margin=1in]{geometry}
+\usepackage{times}
+\usepackage{titling}
+\setlength{\droptitle}{-2cm}
+\usepackage{lipsum}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{algorithm}
+% \usepackage{algpseudocode}
+\usepackage{graphicx}
+% \usepackage{fontspec}
+\usepackage{apacite}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{epigraph}
+\usepackage{natbib}
+% \usepackage{algorithmic}
+\usepackage{mathbbol}
+\usepackage[OT1]{fontenc}
+% \usepackage[hyphens]{url}
+% \usepackage{natbib}
+\usepackage[colorlinks = true,
+           linkcolor = CadetBlue,
+           urlcolor  = BlueViolet,
+           citecolor = BrickRed,
+        %   citecolor = CadetBlue,
+           anchorcolor = blue]{hyperref}
+\usepackage{misra}
+\usepackage[noend]{algpseudocode}
+%\usepackage{algorithmic}
+\algnewcommand{\parState}[1]{\State%
+    \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut\hangindent=\algorithmicindent \hangafter=1 #1\strut}}
+
+\algrenewcommand\algorithmicindent{1.0em}%
+\renewcommand\algorithmicdo{:}
+\renewcommand\algorithmicthen{:}
+\algrenewcommand\alglinenumber[1]{{\tiny\color{black!50}#1.}\hspace{-2pt}}
+
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
+\newcommand{\rightcomment}[1]{{\color{gray} \(\triangleright\) {\footnotesize\textit{#1}}}}
+\algrenewcommand{\algorithmiccomment}[1]{\hfill \rightcomment{#1}}  % redefines \Comment
+\algnewcommand{\LineComment}[1]{\State \rightcomment{#1}}
+% \algnewcommand{\LinesComment}[1]{\State \rightcomment{\parbox[t]{\linewidth-\leftmargin-\widthof{\(\triangleright\) }}{#1}}}
+\algnewcommand{\LinesComment}[1]{\State\rightcomment{\parbox[t]{.95\linewidth-\leftmargin-\widthof{\(\triangleright\) }}{#1}}}
+
+\newcommand{\algorithmicfunc}[1]{\textbf{def} #1 :}
+\algdef{SE}[FUNC]{Func}{EndFunc}[1]{\algorithmicfunc{#1}}{}
+\makeatletter
+\ifthenelse{\equal{\ALG@noend}{t}}%
+  {\algtext*{EndFunc}}
+  {}%
+\makeatother
+% \DeclareSymbolFont{letters}     {OML}{cmm} {m}{it}
+% \DeclareMathAlphabet\mathcal{OMS}{cmsy}{m}{n}
+% \SetMathAlphabet\mathcal{bold}{OMS}{cmsy}{b}{n}
+% \renewcommand\sfdefault{cmss}
+
+\definecolor{yello}{HTML}{ffb677}
+\definecolor{blu}{HTML}{005082}
+\definecolor{purpl}{HTML}{726a95}
+\definecolor{orang}{HTML}{ff9a76}
+\definecolor{tealish}{HTML}{1aa6b7}
+
+\newcommand\BibTeX{B\textsc{ib}\TeX}
+
+\newcommand{\ake}[1]{\textcolor{blue}{$_{AE}$[#1]}}
+\newcommand{\km}[1]{\textcolor{purple}{$_{KM}$[#1]}}
+\newcommand{\todo}[1]{\textcolor{MidnightBlue}{$_{todo}$[#1]}}
+\newcommand{\new}[1]{\textcolor{blu}{#1}}
+\newcommand{\blank}{$\rule{0.6cm}{0.15mm}$}
+
+\newcommand{\source}{\mathcal{S}}
+\newcommand{\adaptation}{\mathcal{A}}
+\newcommand{\generalization}{\mathcal{G}}
+\newcommand{\concepts}{\mathcal{C}}
+\newcommand{\properties}{\mathcal{P}}
+\newcommand{\true}{\mathsf{True}}
+\newcommand{\false}{\mathsf{False}}
+\newcommand{\metric}{\mathrm{G}}
+\newcommand{\positives}{\mathcal{Q}}
+\newcommand{\leftovers}{\neg\positives}
+\newcommand{\negsamp}{\delta}
+
+\title{\bf Supplemental Materials: A Property Induction Framework for Neural Language Models}
+\author{
+Kanishka Misra\\
+Purdue University\\
+\texttt{\small kmisra@purdue.edu}
+\and 
+Julia Taylor Rayz\\
+Purdue University\\
+\texttt{\small jtaylor1@purdue.edu}
+\and 
+Allyson Ettinger\\
+University of Chicago\\
+\texttt{\small aettinger@uchicago.edu}
+}
+\renewcommand{\ttdefault}{cmtt}
+\date{\textbf{Code and analyses:} \url{https://github.com/kanishkamisra/lm-induction}}
+
+
+\newcommand{\depth}{\texttt{depth}}
+\newcommand{\lcs}{\texttt{lcs}}
+
+\begin{document}
+\maketitle
+
+% \begin{quote}
+% \centering
+%     Code and analyses: \url{https://github.com/kanishkamisra/lm-induction}
+% \end{quote}
+\section{Property Knowledge Re-annotation}
+\paragraph{Premise}
+Datasets such as the CSLB \citep{devereux2014centre} naturally lend themselves to investigations that probe the conceptual knowledge of computational models and their representations.
+The CSLB dataset was collected by tasking 123 human participants to generate properties of a total of 638 concepts. For each property the authors then calculated its production frequency for all concepts for which it was generated, i.e., if the property \textit{can fly} was generated for the concept \textsc{robin} by 20 out of the 30 participants who were shown the concept, then its production frequency is 20. Note that the CSLB data set contains only positive property-concept associations. To construct negative samples, prior works that use CSLB as ground-truth to probe word representations typically use the set of concepts for which a given property was not generated, as negative \citep[e.g.][]{lucy-gauthier-2017-distributional, forbes2019neural, da-kasai-2019-cracking, bhatia2020transformer}. That is, negative samples are usually generated using concepts that have a production frequency of 0 for each property. Once a sufficient number of negative samples have been generated, the authors then train a probing classifier for every property, which predicts 1 if the production frequency of the property for that concept is nonzero, and 0 otherwise.
+
+\paragraph{Limitation} Since the task that was employed to construct the CSLB dataset was that of generation as opposed to validation, it is possible---and perhaps likely---that it resulted in inconsistent annotations, where some humans might have forgotten to generate \textit{obvious} properties for certain concepts, or simply ignored them. For instance, the property \textit{can breathe}, which is obviously applicable for all animals, was missing in 146 animal concepts within the dataset. This means that if one were to follow the standard negative-sampling method described earlier, they would consider all 146 of these animals as concepts for which the property \textit{can breathe} does not hold true, which is incorrect. 
+We conjecture that humans fail to generate features that are \textit{obviously valid} for certain concepts (e.g., \textit{can breathe, can grow, is a living thing} for animals) because they may be operating under Grice's maxim of quantity \citep{grice1989studies}, by only eliciting non-trivial or \textit{truly} informative properties for concepts in order to avoid redundancy.
+While we leave the testing of the hypotheses within this conjecture for future work, this limitation of incomplete data raises questions about the extent to which we should trust the results and conclusions of prior work which are crucially affected by this problem, which we summarize using the aphorism: \textit{absence of evidence is not evidence of absence}.
+% Since this is a generation task, humans miss out on obvious facts.. conjecture - Grice. Absence of evidence is not evidence of absence, but this problem persists in all works that use this dataset as ground-truth. 
+% In what follows we describe our procedure to manually correct these inconsistencies.
+
+\paragraph{Manual re-annotation of missing property-concept pairs}
+% This is because they contain human-elicited properties of a number of concepts (638 to be precise). The typical task that humans were subjected to in the collection of CSLB was to generate property phrases for a fixed set of concepts. The authors then listed the `production frequency' or the number of 
+
+To mitigate the limitation discussed above, we first selected the categories \citep[hand-annotated by][e.g., \textsc{bird, vehicle, tree}, etc.]{devereux2014centre} that had at least 9 concepts in the dataset and were not labeled as ``miscellaneous,'' resulting in 23 different categories with a total of 529 unique noun concepts, and 4{,}970 unique properties.
+Next, we manually removed concepts and properties that contained proper nouns (e.g., \textsc{rolls-royce}, \textit{is in Harry Potter}), stereotypical or subjective data (e.g., \textit{is meant for girls}, \textit{is ugly}), and explicit mentions of similarity or relatedness (e.g., \textit{is similar to horse}). We further normalized properties that were paraphrases of each other (e.g., \textit{is used to flavor, does flavor} $\rightarrow$ \textit{is used to flavor}). This resulted in 521 concepts and  3{,}735 properties.
+Again through manual search, we further identified a total of 365 properties that were incompletely annotated (i.e., those that were associated with certain concepts but were omitted for many relevant concepts during data collection---e.g., the property \textit{can grow} was missing for all invertebrates, despite being associated with all of them). 
+We manually extended the coverage for these properties by adding in entries for concepts for which they had not been elicited. For instance, for the property \textit{can breathe}, which was generated for 6 out of 152 animals in the original dataset, we further add the remaining 146 concepts as additional positively associated concepts, increasing its coverage from 6 to 152.
+While the total number of incompletely annotated properties is small (10\% of the valid properties), our re-annotation process greatly increases the total number of concept-property pairs (from 13{,}355 pairs in the original, unmodified dataset, to 23{,}107: an increase of 72\%) since many of the incompletely labeled properties were applicable across several categories (e.g., \textit{has a mouth, can grow,} etc).
+After applying this process to the CSLB dataset, we are left with 23{,}107 property-concept pairs, which we use in subsequent experiments.
+% The annotation process can be found in the file \texttt{re-annotation.R} in the github repository.\footnote{\url{https://github.com/kanishkamisra/lm-induction/R/re-annotation.R}} Furthermore, 
+The re-annotated data can be found in the file \texttt{post\_annotation\_all.csv}\footnote{\url{https://github.com/kanishkamisra/lm-induction/data/post\_annotation\_all.csv}} in the github repository.
+
+\paragraph{Final thoughts} The re-annotation process described above was performed manually due to resource, time, and financial constraints. However, we recommend running a large-scale empirical validation studies for datasets such as CSLB and McRae, before using them for probing experiments. 
+While this is non-ideal in terms of resource use, it is necessary in order to draw faithful and appropriate conclusions about the correspondence between conceptual knowledge in humans and machines. 
+Finally, a manuscript describing this process in greater detail, a small validation experiment ($\approx$2400 annotations) with humans, as well as empirical implications of the limitations described herein is in the works.
+
+\section{Negative Sample generation using Taxonomies}
+Here we describe our algorithm to generate negative samples for our first experiment in the paper---the property judgment task, where LMs are fine-tuned to classify as $\true$ or $\false$ sentences that attribute properties to concepts. For instance, the sentence \textit{a cat can fly} is labeled as $\false$ as \textsc{cat} is a negative sample for the property \textit{can fly}, whereas, \textit{a robin can fly} is labeled as $\true$.
+Briefly, for the set of positive samples for a given property, we sample an equal-sized set of negative samples that are maximally similar to the positive samples. We use a taxonomic similarity (described below) as our similarity measure as it is model-free. Below we describe useful notation involved in the process, and then describe the full algorithm.
+\subsection{Notation and Preliminaries}
+\Cref{tab:notation} describes the notation we follow to construct our property judgment dataset. Our goal here is to generate 23{,}107 negative samples and then take the entire set of 46{,}214 concept-property pairs and their labels to carry out the property-judgment experiment.
+\input{notation}
+
+In order to generate negative samples, we first tag the senses of all our 521 concepts using the WordNet \citep{miller1995wordnet} taxonomy, and also retrieve the sub-tree from WordNet that perfectly contains our concepts and use this as our ground-truth taxonomy on the basis of which we carry out subsequent experiments.
+We generate our negative samples by choosing a measure derived primarily from the Wu-Palmer similarity \citep{wu-palmer-1994-verb}.
+This similarity can be computed over any taxonomy using the following operations:
+% \todo{We use similarities across the is-a hierarchy to obtain negative samples for each property}. 
+\begin{align}
+    sim_{\texttt{wup}}(c_i, c_j) = \frac{2 \times \depth(\lcs(c_i, c_j))}{\depth(c_i) + \depth(c_j)},
+\end{align}
+where $\lcs(x_1, x_2)$ is a function that computes the least-common subsumer\footnote{a node in the hierarchy that is a hypernym/parent of the input concepts with minimum depth. For instance, $\lcs(\textsc{robin}, \textsc{bat}) = \textsc{vertebrate}$.} of the two\footnote{although in practice it can be applied for multiple concepts.} concepts, and $\depth(x)$ computes the length of the path between the input concept and the root node of the hierarchy. 
+We consider a generalized form of this measure (denoted as $sim_{\texttt{gwup}}$), to compute the similarity of a single concept to a set of concepts:
+\begin{align}
+    % sim_{\texttt{gwup}}(c_1, \dots, c_n, r) = \frac{(n + 1) \times \depth(\lcs(c_1, \dots, c_n, r))}{\depth(c_1) + \dots + \depth(c_n) + \depth(r)}
+    sim_{\texttt{gwup}}(c_1, \dots, c_n) &= \frac{n \times \depth(\lcs(c_1, \dots, c_n))}{\depth(c_1) + \dots + \depth(c_n)}
+    % sim_{\texttt{gwup}}([c_1, \dots, c_n], r_i) &= \frac{n \times \depth(\lcs(c_1, \dots, c_n))}{\depth(c_1) + \dots + \depth(c_n)}
+\end{align}
+For every property $P_i$, we use this measure in \cref{alg:propjudgdataset} to sample $k$ concepts from $\leftovers_{P_i}$, based on their $sim_{gwup}$ with $\positives_{P_i} = \{c_1, \dots, c_k\}$.
+For example, consider the property \textit{has striped patterns on its body}, the corresponding artifacts would be:
+\begin{align*}
+    \positives &= \{\textsc{zebra}, \textsc{tiger}, \textsc{bee}, \textsc{wasp}\}\\
+    \leftovers &= \concepts - \positives\\
+    &= \{\textsc{accordion}, \dots, \textsc{yo-yo}\}\\
+    \mathrm{NS} = \negsamp(\leftovers, 4) &= \{\textsc{horse}, \textsc{lion}, \textsc{ant}, \textsc{beetle}\}
+\end{align*}
+\begin{align*}
+    \mathcal{D} = \{&[\textit{a zebra has striped patterns on its body}, \true],\\&\dots, \\
+    &[\textit{a beetle has striped patterns on its body}, \false]\}
+\end{align*}
+Note that we follow the method outlined by \citet{bhatia2020transformer} to convert concept-property pairs into sentences, which we denote as $\textit{sentencizer}()$ in \Cref{alg:propjudgdataset}.
+
+\begin{algorithm}[H]
+\textbf{Input:} $\concepts = \{c_1, \dots, c_n\}$: Set of all concepts, $n = 521$.\\
+\hspace*{2.9em}$\properties = \{P_1, \dots, P_m\}$: Set of all properties, $m = 3735$.
+\begin{algorithmic}[1]
+\State $\mathcal{D} \gets [\,]$ \rightcomment{the final set of stimuli for the property judgment task.}
+% \LineComment{hmm.}
+% \State $2$  \rightcomment{Initialize output value to $1$}
+\For{$i = 1, \ldots, m$}
+    \State $\positives_{P_i} \gets [c_1, \dots, c_k]$ \rightcomment{set of $k$ concepts that possess the property $P_i$}
+    \State $\leftovers_{P_i} \gets \concepts - \positives_{P_i}$
+    \LineComment{Lines 6--9 compute $\negsamp(\leftovers_{P_i}, k)$}
+    \State $\mathrm{NS}_{P_i} \gets [\,]$ \rightcomment{set of negative samples for the property $P_i$}
+    \State $\Tilde{\leftovers_{P_i}} \gets \text{argsort}(\leftovers_{P_i}, sim_{\texttt{gwup}})$ \rightcomment{sort $\leftovers_{P_i}$ based on $sim_{\texttt{gwup}}(c_1, \dots, c_k, x_j)\, \forall x_j \in \leftovers_{P_i}$}
+    \For{$j = 1, \ldots, k$}
+        \State $\mathrm{NS}_{P_i}.\text{append}(\Tilde{\leftovers_{P_i}}[j])$ \rightcomment{take the top $k$ concepts from $\leftovers_{P_i}$ as negative samples}
+    \EndFor
+% \For{$k = K, \ldots, 1$}
+%     \State $3$
+%     \State $2$
+%     \State $1$
+% \EndFor
+\LineComment{the following pairs the positive and negative samples with their labels, and appends them to $\mathcal{D}$}
+    \For{$j = 1, \ldots, k$}
+    \LineComment{$\textit{sentencize}()$ constructs a sentence using a concept and a property-phrase \citep[see][]{bhatia2020transformer}.}
+        \State $\mathcal{D}.\text{append}([\textit{sentencize}(\positives_{P_i}[j], P_i), \true])$
+        \State $\mathcal{D}.\text{append}([\textit{sentencize}(\mathrm{NS}_{P_i}[j], P_i), \false])$
+    \EndFor
+    % $\mathcal{D}.\text{extend}(x)$
+\EndFor
+% \LinesComment{Apply \cref{eq:incl-from-grad}}
+% \State $\pi \gets \boldsymbol{0}^N$
+% \For{$n = 1 \ldots N$}
+% \State $\pi \gets \frac{w_n}{Z}$
+% \EndFor
+\State \Return $\mathcal{D}$
+\end{algorithmic}
+\caption{Algorithm to generate the dataset, $\mathcal{D}$, for the property judgment task}
+\label{alg:propjudgdataset}
+\end{algorithm}
+
+\section{Linear Mixed Effects Model Results}
+We use a linear-mixed effects models to test the connection between LMs’ generalization behavior and the overlap in training data properties
+For each model, we use the following LMER specification \citep{lme4}:
+\begin{quote}
+    \centering
+    \texttt{G $\sim$ n + overlap * sim + (1|property) + (1|trial)},
+\end{quote}
+where:
+\begin{itemize}
+    \item \texttt{G} is the generalization score (see Eq. 1 in the paper).
+    \item \texttt{n} is the number of adaptation concepts (i.e., the number of premise statements).
+    \item \texttt{overlap} is the property overlap between the adaptation and the generalization set in each trial, calculated as the jaccard similarity between the binary property-vectors of each concept.
+    \item \texttt{sim} is the cosine similarity between the embeddings (from the pre-contextualized layer in each model) of the concepts in the adaptation and generalization sets in each trial. Note that this is a model-dependent measure.
+    \item \texttt{property} is the novel property (one out of 8) that is projected in the trial.
+    \item \texttt{trial} is the individual trial.
+\end{itemize}
+In what follows, we report results from fitting this model to the results and statistics of our three property-induction models. We use Satterthwaite's method \citep{lmertest} to perform significance testing.
+% \subsection{ALBERT-xxlarge}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Fixed-effect           & $\beta$   & $SE$     & $t$     & $df$      & $p$      \\ \midrule
+\texttt{n}             & $0.0544$  & $0.0035$ & $15.41$ & $304.59$  & $<2e-16$ \\
+\texttt{overlap}       & $0.3951$  & $0.0229$ & $17.26$ & $7123.98$ & $<2e-16$ \\
+\texttt{sim}           & $0.1102$  & $0.0180$ & $6.11$  & $6751.08$ & $1e-9$ \\
+\texttt{overlap * sim} & $0.8583$ & $0.2263$ & $3.79$ & $7170.65$ & $0.0001$  \\ \bottomrule
+\end{tabular}
+\caption{Results for ALBERT-xxl}
+\label{tab:albert}
+\end{table}
+
+% \subsection{BERT-large}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Fixed-effect           & $\beta$   & $SE$     & $t$     & $df$      & $p$      \\ \midrule
+\texttt{n}             & $0.0589$  & $0.0046$ & $12.76$ & $396.84$  & $<2e-16$ \\
+\texttt{overlap}       & $0.4731$  & $0.0245$ & $19.28$ & $7088.53$ & $<2e-16$ \\
+\texttt{sim}           & $0.1696$  & $0.0487$ & $3.48$  & $6509.68$ & $0.0005$ \\
+\texttt{overlap * sim} & $0.7429$ & $0.3415$ & $2.18$ & $7180.52$ & $0.03$  \\ \bottomrule
+\end{tabular}
+\caption{Results for BERT-large}
+\label{tab:bert}
+\end{table}
+
+% \subsection{RoBERTa-large}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Fixed-effect           & $\beta$   & $SE$     & $t$     & $df$      & $p$      \\ \midrule
+\texttt{n}             & $0.0555$  & $0.0051$ & $10.79$ & $404.43$  & $<2e-16$ \\
+\texttt{overlap}       & $0.3851$  & $0.0269$ & $14.32$ & $7187.79$ & $<2e-16$ \\
+\texttt{sim}           & $0.3631$  & $0.0665$ & $5.46$  & $6180.44$ & $4.9e-8$ \\
+\texttt{overlap * sim} & $-1.1735$ & $0.4164$ & $-2.82$ & $7186.19$ & $0.005$  \\ \bottomrule
+\end{tabular}
+\caption{Results for RoBERTa-large}
+\label{tab:roberta}
+\end{table}
+
+
+% \section{Additional Observations}
+% \paragraph{Embedding space similarities of the models do not track category membership} We find
+% % figure showing outside to be greater similarity than taxonomy -- existence proof that cosine similarity does not track taxonomic membership.
+% \paragraph{Relation to Osherson et al.'s SimCov Model}
+\clearpage
+\bibliographystyle{apacite}
+
+\bibliography{CogSci_Template}
+\end{document}

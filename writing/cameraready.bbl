@@ -1,0 +1,1160 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Bates%
+, M{\"a}chler%
+, Bolker%
+\BCBL {}\ \BBA {} Walker%
+}{%
+Bates%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+lme4}
+\APACinsertmetastar {%
+lme4}%
+\begin{APACrefauthors}%
+Bates, D.%
+, M{\"a}chler, M.%
+, Bolker, B.%
+\BCBL {}\ \BBA {} Walker, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Fitting Linear Mixed-Effects Models Using {lme4}}
+  {Fitting linear mixed-effects models using {lme4}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Statistical Software}{67}{1}{1--48}.
+\newblock
+\begin{APACrefDOI} \doi{10.18637/jss.v067.i01} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bhagavatula%
+\ \protect \BOthers {.}}{%
+Bhagavatula%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+bhagavatula2019abductive}
+\APACinsertmetastar {%
+bhagavatula2019abductive}%
+\begin{APACrefauthors}%
+Bhagavatula, C.%
+, Le~Bras, R.%
+, Malaviya, C.%
+, Sakaguchi, K.%
+, Holtzman, A.%
+, Rashkin, H.%
+\BDBL {}Choi, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Abductive Commonsense Reasoning}} {{Abductive
+  Commonsense Reasoning}}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{International Conference on Learning Representations}.}
+  {{International Conference on Learning Representations}.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bhatia%
+\ \BBA {} Richie%
+}{%
+Bhatia%
+\ \BBA {} Richie%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+bhatia2020transformer}
+\APACinsertmetastar {%
+bhatia2020transformer}%
+\begin{APACrefauthors}%
+Bhatia, S.%
+\BCBT {}\ \BBA {} Richie, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Transformer Networks of Human Concept Knowledge}
+  {Transformer networks of human concept knowledge}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychological Review}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bowman%
+, Angeli%
+, Potts%
+\BCBL {}\ \BBA {} Manning%
+}{%
+Bowman%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+bowman2015large}
+\APACinsertmetastar {%
+bowman2015large}%
+\begin{APACrefauthors}%
+Bowman, S\BPBI R.%
+, Angeli, G.%
+, Potts, C.%
+\BCBL {}\ \BBA {} Manning, C\BPBI D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A large annotated corpus for learning natural language
+  inference} {A large annotated corpus for learning natural language
+  inference}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 2015 Conference on Empirical Methods
+  in Natural Language Processing} {Proceedings of the 2015 conference on
+  empirical methods in natural language processing}\ (\BPGS\ 632--642).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Carey%
+}{%
+Carey%
+}{%
+{\protect \APACyear {1985}}%
+}]{%
+carey1985conceptual}
+\APACinsertmetastar {%
+carey1985conceptual}%
+\begin{APACrefauthors}%
+Carey, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1985}.
+\newblock
+\APACrefbtitle {Conceptual Change in Childhood} {Conceptual change in
+  childhood}.
+\newblock
+\APACaddressPublisher{}{MIT press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Chater%
+, Oaksford%
+, Hahn%
+\BCBL {}\ \BBA {} Heit%
+}{%
+Chater%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+chater2011inductive}
+\APACinsertmetastar {%
+chater2011inductive}%
+\begin{APACrefauthors}%
+Chater, N.%
+, Oaksford, M.%
+, Hahn, U.%
+\BCBL {}\ \BBA {} Heit, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Inductive logic and empirical psychology} {Inductive
+  logic and empirical psychology}.{\BBCQ}
+\newblock
+\BIn{} D\BPBI M.~Gabbay, S.~Hartmann\BCBL {}\ \BBA {} J.~Woods\ (\BEDS),
+  \APACrefbtitle {{Handbook of the History of Logic}} {{Handbook of the History
+  of Logic}}\ (\BVOL~10, \BPGS\ 553--624).
+\newblock
+\APACaddressPublisher{}{Elsevier}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Da%
+\ \BBA {} Kasai%
+}{%
+Da%
+\ \BBA {} Kasai%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+da-kasai-2019-cracking}
+\APACinsertmetastar {%
+da-kasai-2019-cracking}%
+\begin{APACrefauthors}%
+Da, J.%
+\BCBT {}\ \BBA {} Kasai, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Cracking the Contextual Commonsense Code: Understanding
+  Commonsense Reasoning Aptitude of Deep Contextual Representations} {Cracking
+  the contextual commonsense code: Understanding commonsense reasoning aptitude
+  of deep contextual representations}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{Proceedings of the First Workshop on Commonsense
+  Inference in Natural Language Processing}} {{Proceedings of the First
+  Workshop on Commonsense Inference in Natural Language Processing}}\ (\BPGS\
+  1--12).
+\newblock
+\APACaddressPublisher{Hong Kong, China}{Association for Computational
+  Linguistics}.
+\newblock
+\begin{APACrefURL} \url{https://aclanthology.org/D19-6001} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.18653/v1/D19-6001} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Devereux%
+, Tyler%
+, Geertzen%
+\BCBL {}\ \BBA {} Randall%
+}{%
+Devereux%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+devereux2014centre}
+\APACinsertmetastar {%
+devereux2014centre}%
+\begin{APACrefauthors}%
+Devereux, B\BPBI J.%
+, Tyler, L\BPBI K.%
+, Geertzen, J.%
+\BCBL {}\ \BBA {} Randall, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{The Centre for Speech, Language and the Brain (CSLB)
+  concept property norms}} {{The Centre for Speech, Language and the Brain
+  (CSLB) concept property norms}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{{Behavior Research Methods}}{46}{4}{1119--1127}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Devlin%
+, Chang%
+, Lee%
+\BCBL {}\ \BBA {} Toutanova%
+}{%
+Devlin%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+devlin-etal-2019-bert}
+\APACinsertmetastar {%
+devlin-etal-2019-bert}%
+\begin{APACrefauthors}%
+Devlin, J.%
+, Chang, M\BHBI W.%
+, Lee, K.%
+\BCBL {}\ \BBA {} Toutanova, K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{BERT}: Pre-training of Deep Bidirectional Transformers
+  for Language Understanding} {{BERT}: Pre-training of deep bidirectional
+  transformers for language understanding}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{Proceedings of the 2019 Conference of the North
+  {A}merican Chapter of the Association for Computational Linguistics: Human
+  Language Technologies, Volume 1 (Long and Short Papers)}} {{Proceedings of
+  the 2019 Conference of the North {A}merican Chapter of the Association for
+  Computational Linguistics: Human Language Technologies, Volume 1 (Long and
+  Short Papers)}}\ (\BPGS\ 4171--4186).
+\newblock
+\APACaddressPublisher{Minneapolis, Minnesota}{Association for Computational
+  Linguistics}.
+\newblock
+\begin{APACrefURL} \url{https://aclanthology.org/N19-1423} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.18653/v1/N19-1423} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Elman%
+}{%
+Elman%
+}{%
+{\protect \APACyear {2004}}%
+}]{%
+elman2004alternative}
+\APACinsertmetastar {%
+elman2004alternative}%
+\begin{APACrefauthors}%
+Elman, J\BPBI L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2004}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {An alternative view of the mental lexicon} {An
+  alternative view of the mental lexicon}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Trends in cognitive sciences}{8}{7}{301--306}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Forbes%
+, Holtzman%
+\BCBL {}\ \BBA {} Choi%
+}{%
+Forbes%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+forbes2019neural}
+\APACinsertmetastar {%
+forbes2019neural}%
+\begin{APACrefauthors}%
+Forbes, M.%
+, Holtzman, A.%
+\BCBL {}\ \BBA {} Choi, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Do Neural Language Representations Learn Physical
+  Commonsense?}} {{Do Neural Language Representations Learn Physical
+  Commonsense?}}{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{Proceedings of the 41st Annual Meeting of the Cognitive
+  Science Society}.} {{Proceedings of the 41st Annual Meeting of the Cognitive
+  Science Society}.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Gelman%
+\ \BBA {} Markman%
+}{%
+Gelman%
+\ \BBA {} Markman%
+}{%
+{\protect \APACyear {1986}}%
+}]{%
+gelman1986categories}
+\APACinsertmetastar {%
+gelman1986categories}%
+\begin{APACrefauthors}%
+Gelman, S\BPBI A.%
+\BCBT {}\ \BBA {} Markman, E\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1986}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Categories and induction in young children} {Categories
+  and induction in young children}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Cognition}{23}{3}{183--209}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hayes%
+\ \BBA {} Heit%
+}{%
+Hayes%
+\ \BBA {} Heit%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+hayes2018inductive}
+\APACinsertmetastar {%
+hayes2018inductive}%
+\begin{APACrefauthors}%
+Hayes, B\BPBI K.%
+\BCBT {}\ \BBA {} Heit, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Inductive reasoning 2.0} {Inductive reasoning
+  2.0}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Wiley Interdisciplinary Reviews: Cognitive
+  Science}{9}{3}{e1459}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kemp%
+\ \BBA {} Jern%
+}{%
+Kemp%
+\ \BBA {} Jern%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+kemp2014taxonomy}
+\APACinsertmetastar {%
+kemp2014taxonomy}%
+\begin{APACrefauthors}%
+Kemp, C.%
+\BCBT {}\ \BBA {} Jern, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{A Taxonomy of Inductive Problems}} {{A Taxonomy of
+  Inductive Problems}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{{Psychonomic Bulletin \& Review}}{21}{1}{23--46}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kemp%
+\ \BBA {} Tenenbaum%
+}{%
+Kemp%
+\ \BBA {} Tenenbaum%
+}{%
+{\protect \APACyear {2009}}%
+}]{%
+kemp2009structured}
+\APACinsertmetastar {%
+kemp2009structured}%
+\begin{APACrefauthors}%
+Kemp, C.%
+\BCBT {}\ \BBA {} Tenenbaum, J\BPBI B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Structured Statistical Models of Inductive Reasoning}}
+  {{Structured Statistical Models of Inductive Reasoning}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{{Psychological Review}}{116}{1}{20}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kim%
+\ \BBA {} Smolensky%
+}{%
+Kim%
+\ \BBA {} Smolensky%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+kim-smolensky-2021-testing}
+\APACinsertmetastar {%
+kim-smolensky-2021-testing}%
+\begin{APACrefauthors}%
+Kim, N.%
+\BCBT {}\ \BBA {} Smolensky, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Testing for Grammatical Category Abstraction in Neural
+  Language Models} {Testing for grammatical category abstraction in neural
+  language models}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{Proceedings of the Society for Computation in
+  Linguistics 2021}} {{Proceedings of the Society for Computation in
+  Linguistics 2021}}\ (\BPGS\ 467--470).
+\newblock
+\APACaddressPublisher{Online}{Association for Computational Linguistics}.
+\newblock
+\begin{APACrefURL} \url{https://aclanthology.org/2021.scil-1.59}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kuznetsova%
+, Brockhoff%
+\BCBL {}\ \BBA {} Christensen%
+}{%
+Kuznetsova%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+lmertest}
+\APACinsertmetastar {%
+lmertest}%
+\begin{APACrefauthors}%
+Kuznetsova, A.%
+, Brockhoff, P\BPBI B.%
+\BCBL {}\ \BBA {} Christensen, R\BPBI H\BPBI B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{lmerTest} Package: Tests in Linear Mixed Effects
+  Models} {{lmerTest} package: Tests in linear mixed effects models}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Statistical Software}{82}{13}{1--26}.
+\newblock
+\begin{APACrefDOI} \doi{10.18637/jss.v082.i13} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lan%
+\ \protect \BOthers {.}}{%
+Lan%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+lan2019albert}
+\APACinsertmetastar {%
+lan2019albert}%
+\begin{APACrefauthors}%
+Lan, Z.%
+, Chen, M.%
+, Goodman, S.%
+, Gimpel, K.%
+, Sharma, P.%
+\BCBL {}\ \BBA {} Soricut, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{ALBERT: A Lite BERT for Self-supervised Learning of
+  Language Representations}} {{ALBERT: A Lite BERT for Self-supervised Learning
+  of Language Representations}}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{International Conference on Learning Representations}.}
+  {{International Conference on Learning Representations}.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Liu%
+\ \protect \BOthers {.}}{%
+Liu%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+liu2019roberta}
+\APACinsertmetastar {%
+liu2019roberta}%
+\begin{APACrefauthors}%
+Liu, Y.%
+, Ott, M.%
+, Goyal, N.%
+, Du, J.%
+, Joshi, M.%
+, Chen, D.%
+\BDBL {}Stoyanov, V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{RoBERTa: A Robustly Optimized BERT Pretraining
+  Approach}} {{RoBERTa: A Robustly Optimized BERT Pretraining
+  Approach}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint arXiv:1907.11692}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Loshchilov%
+\ \BBA {} Hutter%
+}{%
+Loshchilov%
+\ \BBA {} Hutter%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+loshchilov2018decoupled}
+\APACinsertmetastar {%
+loshchilov2018decoupled}%
+\begin{APACrefauthors}%
+Loshchilov, I.%
+\BCBT {}\ \BBA {} Hutter, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Decoupled Weight Decay Regularization}} {{Decoupled
+  Weight Decay Regularization}}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{International Conference on Learning Representations}.}
+  {{International Conference on Learning Representations}.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lucy%
+\ \BBA {} Gauthier%
+}{%
+Lucy%
+\ \BBA {} Gauthier%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+lucy-gauthier-2017-distributional}
+\APACinsertmetastar {%
+lucy-gauthier-2017-distributional}%
+\begin{APACrefauthors}%
+Lucy, L.%
+\BCBT {}\ \BBA {} Gauthier, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Are Distributional Representations Ready for the Real
+  World? Evaluating Word Vectors for Grounded Perceptual Meaning} {Are
+  distributional representations ready for the real world? evaluating word
+  vectors for grounded perceptual meaning}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the First Workshop on Language Grounding
+  for Robotics} {Proceedings of the first workshop on language grounding for
+  robotics}\ (\BPGS\ 76--85).
+\newblock
+\APACaddressPublisher{Vancouver, Canada}{Association for Computational
+  Linguistics}.
+\newblock
+\begin{APACrefURL} \url{https://aclanthology.org/W17-2810} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.18653/v1/W17-2810} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lupyan%
+\ \BBA {} Lewis%
+}{%
+Lupyan%
+\ \BBA {} Lewis%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+lupyan2019words}
+\APACinsertmetastar {%
+lupyan2019words}%
+\begin{APACrefauthors}%
+Lupyan, G.%
+\BCBT {}\ \BBA {} Lewis, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {From words-as-mappings to words-as-cues: The role of
+  language in semantic knowledge} {From words-as-mappings to words-as-cues: The
+  role of language in semantic knowledge}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Language, Cognition and
+  Neuroscience}{34}{10}{1319--1337}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Machery%
+}{%
+Machery%
+}{%
+{\protect \APACyear {2009}}%
+}]{%
+machery2009doing}
+\APACinsertmetastar {%
+machery2009doing}%
+\begin{APACrefauthors}%
+Machery, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2009}.
+\newblock
+\APACrefbtitle {Doing without concepts} {Doing without concepts}.
+\newblock
+\APACaddressPublisher{}{Oxford University Press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+McCoy%
+, Frank%
+\BCBL {}\ \BBA {} Linzen%
+}{%
+McCoy%
+, Frank%
+\BCBL {}\ \BBA {} Linzen%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+mccoy2020does}
+\APACinsertmetastar {%
+mccoy2020does}%
+\begin{APACrefauthors}%
+McCoy, R\BPBI T.%
+, Frank, R.%
+\BCBL {}\ \BBA {} Linzen, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Does syntax need to grow on trees? sources of
+  hierarchical inductive bias in sequence-to-sequence networks}} {{Does syntax
+  need to grow on trees? sources of hierarchical inductive bias in
+  sequence-to-sequence networks}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{{Transactions of the Association for Computational
+  Linguistics}}{8}{}{125--140}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+McCoy%
+, Grant%
+, Smolensky%
+, Griffiths%
+\BCBL {}\ \BBA {} Linzen%
+}{%
+McCoy%
+, Grant%
+\BCBL {}\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+mccoy2020universal}
+\APACinsertmetastar {%
+mccoy2020universal}%
+\begin{APACrefauthors}%
+McCoy, R\BPBI T.%
+, Grant, E.%
+, Smolensky, P.%
+, Griffiths, T\BPBI L.%
+\BCBL {}\ \BBA {} Linzen, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Universal linguistic inductive biases via
+  meta-learning}} {{Universal linguistic inductive biases via
+  meta-learning}}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{Proceedings of the 42nd Annual Conference of the
+  Cognitive Science Society}.} {{Proceedings of the 42nd Annual Conference of
+  the Cognitive Science Society}.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Miller%
+}{%
+Miller%
+}{%
+{\protect \APACyear {1995}}%
+}]{%
+miller1995wordnet}
+\APACinsertmetastar {%
+miller1995wordnet}%
+\begin{APACrefauthors}%
+Miller, G\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1995}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{WordNet: a lexical database for English}} {{WordNet: a
+  lexical database for English}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{{Communications of the ACM}}{38}{11}{39--41}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Misra%
+, Ettinger%
+\BCBL {}\ \BBA {} Rayz%
+}{%
+Misra%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+misra2021typicality}
+\APACinsertmetastar {%
+misra2021typicality}%
+\begin{APACrefauthors}%
+Misra, K.%
+, Ettinger, A.%
+\BCBL {}\ \BBA {} Rayz, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Do language models learn typicality judgments from
+  text?} {Do language models learn typicality judgments from text?}{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{Proceedings of the 43rd Annual Conference of the
+  Cognitive Science Society}.} {{Proceedings of the 43rd Annual Conference of
+  the Cognitive Science Society}.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Murphy%
+}{%
+Murphy%
+}{%
+{\protect \APACyear {1993}}%
+}]{%
+murphy1993theories}
+\APACinsertmetastar {%
+murphy1993theories}%
+\begin{APACrefauthors}%
+Murphy, G\BPBI L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1993}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Theories and concept formation.} {Theories and concept
+  formation.}{\BBCQ}
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Murphy%
+}{%
+Murphy%
+}{%
+{\protect \APACyear {2002}}%
+}]{%
+murphy2004big}
+\APACinsertmetastar {%
+murphy2004big}%
+\begin{APACrefauthors}%
+Murphy, G\BPBI L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2002}.
+\newblock
+\APACrefbtitle {{The Big Book of Concepts}} {{The Big Book of Concepts}}.
+\newblock
+\APACaddressPublisher{}{MIT press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Osherson%
+, Smith%
+, Wilkie%
+, Lopez%
+\BCBL {}\ \BBA {} Shafir%
+}{%
+Osherson%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1990}}%
+}]{%
+osherson1990category}
+\APACinsertmetastar {%
+osherson1990category}%
+\begin{APACrefauthors}%
+Osherson, D\BPBI N.%
+, Smith, E\BPBI E.%
+, Wilkie, O.%
+, Lopez, A.%
+\BCBL {}\ \BBA {} Shafir, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1990}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Category-based Induction}} {{Category-based
+  Induction}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychological Review}{97}{2}{185}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rips%
+}{%
+Rips%
+}{%
+{\protect \APACyear {1975}}%
+}]{%
+rips1975inductive}
+\APACinsertmetastar {%
+rips1975inductive}%
+\begin{APACrefauthors}%
+Rips, L\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1975}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Inductive judgments about natural categories} {Inductive
+  judgments about natural categories}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{{Journal of Verbal Learning and Verbal
+  Behavior}}{14}{6}{665--681}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rogers%
+\ \BBA {} McClelland%
+}{%
+Rogers%
+\ \BBA {} McClelland%
+}{%
+{\protect \APACyear {2004}}%
+}]{%
+rogers2004semantic}
+\APACinsertmetastar {%
+rogers2004semantic}%
+\begin{APACrefauthors}%
+Rogers, T\BPBI T.%
+\BCBT {}\ \BBA {} McClelland, J\BPBI L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2004}.
+\newblock
+\APACrefbtitle {Semantic cognition: A parallel distributed processing approach}
+  {Semantic cognition: A parallel distributed processing approach}.
+\newblock
+\APACaddressPublisher{}{MIT press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rumelhart%
+, Hinton%
+\BCBL {}\ \BBA {} Williams%
+}{%
+Rumelhart%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1986}}%
+}]{%
+rumelhart1986learning}
+\APACinsertmetastar {%
+rumelhart1986learning}%
+\begin{APACrefauthors}%
+Rumelhart, D\BPBI E.%
+, Hinton, G\BPBI E.%
+\BCBL {}\ \BBA {} Williams, R\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1986}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Learning representations by back-propagating errors}
+  {Learning representations by back-propagating errors}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Nature}{323}{6088}{533--536}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Saxe%
+, McClelland%
+\BCBL {}\ \BBA {} Ganguli%
+}{%
+Saxe%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+saxe2019mathematical}
+\APACinsertmetastar {%
+saxe2019mathematical}%
+\begin{APACrefauthors}%
+Saxe, A\BPBI M.%
+, McClelland, J\BPBI L.%
+\BCBL {}\ \BBA {} Ganguli, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A mathematical theory of semantic development in deep
+  neural networks} {A mathematical theory of semantic development in deep
+  neural networks}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Proceedings of the National Academy of
+  Sciences}{116}{23}{11537--11546}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Sloman%
+}{%
+Sloman%
+}{%
+{\protect \APACyear {1993}}%
+}]{%
+sloman1993feature}
+\APACinsertmetastar {%
+sloman1993feature}%
+\begin{APACrefauthors}%
+Sloman, S\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1993}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Feature-based induction} {Feature-based
+  induction}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Cognitive psychology}{25}{2}{231--280}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+van Schijndel%
+\ \BBA {} Linzen%
+}{%
+van Schijndel%
+\ \BBA {} Linzen%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+van2018neural}
+\APACinsertmetastar {%
+van2018neural}%
+\begin{APACrefauthors}%
+van Schijndel, M.%
+\BCBT {}\ \BBA {} Linzen, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Neural Model of Adaptation in Reading} {A neural model
+  of adaptation in reading}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 2018 Conference on Empirical Methods
+  in Natural Language Processing} {Proceedings of the 2018 conference on
+  empirical methods in natural language processing}\ (\BPGS\ 4704--4710).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Vaswani%
+\ \protect \BOthers {.}}{%
+Vaswani%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+vaswani2017attention}
+\APACinsertmetastar {%
+vaswani2017attention}%
+\begin{APACrefauthors}%
+Vaswani, A.%
+, Shazeer, N.%
+, Parmar, N.%
+, Uszkoreit, J.%
+, Jones, L.%
+, Gomez, A\BPBI N.%
+\BDBL {}Polosukhin, I.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Attention is all you need} {Attention is all you
+  need}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{Advances in Neural Information Processing Systems}}
+  {{Advances in Neural Information Processing Systems}}\ (\BPGS\ 5998--6008).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wang%
+\ \protect \BOthers {.}}{%
+Wang%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+wang2018glue}
+\APACinsertmetastar {%
+wang2018glue}%
+\begin{APACrefauthors}%
+Wang, A.%
+, Singh, A.%
+, Michael, J.%
+, Hill, F.%
+, Levy, O.%
+\BCBL {}\ \BBA {} Bowman, S\BPBI R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{GLUE: A Multi-Task Benchmark and Analysis Platform for
+  Natural Language Understanding}} {{GLUE: A Multi-Task Benchmark and Analysis
+  Platform for Natural Language Understanding}}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{International Conference on Learning Representations}.}
+  {{International Conference on Learning Representations}.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Weir%
+, Poliak%
+\BCBL {}\ \BBA {} Van~Durme%
+}{%
+Weir%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+weir2020probing}
+\APACinsertmetastar {%
+weir2020probing}%
+\begin{APACrefauthors}%
+Weir, N.%
+, Poliak, A.%
+\BCBL {}\ \BBA {} Van~Durme, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Probing neural language models for human tacit
+  assumptions} {Probing neural language models for human tacit
+  assumptions}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{CogSci 2020}} {{CogSci 2020}}\ (\BPGS\ 377--383).
+\newblock
+\APACaddressPublisher{}{Cognitive Science Society}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wu%
+\ \BBA {} Palmer%
+}{%
+Wu%
+\ \BBA {} Palmer%
+}{%
+{\protect \APACyear {1994}}%
+}]{%
+wu-palmer-1994-verb}
+\APACinsertmetastar {%
+wu-palmer-1994-verb}%
+\begin{APACrefauthors}%
+Wu, Z.%
+\BCBT {}\ \BBA {} Palmer, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1994}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Verb Semantics and Lexical Selection}} {{Verb Semantics
+  and Lexical Selection}}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{32nd Annual Meeting of the Association for
+  Computational Linguistics}} {{32nd Annual Meeting of the Association for
+  Computational Linguistics}}\ (\BPGS\ 133--138).
+\newblock
+\APACaddressPublisher{Las Cruces, New Mexico, USA}{Association for
+  Computational Linguistics}.
+\newblock
+\begin{APACrefURL} \url{https://aclanthology.org/P94-1019} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.3115/981732.981751} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

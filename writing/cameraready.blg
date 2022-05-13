@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: cameraready.aux
+The style file: apacite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: CogSci_Template.bib
+apacite.bst [2012/02/25 v6.01 APA bibliography style]
+Warning--No journal in murphy1993theories
+You've used 40 entries,
+            6735 wiz_defined-function locations,
+            1475 strings with 17903 characters,
+and the built_in function-call counts, 79366 in all, are:
+= -- 10219
+> -- 753
+< -- 3299
++ -- 3475
+- -- 80
+* -- 4765
+:= -- 13081
+add.period$ -- 191
+call.type$ -- 40
+change.case$ -- 697
+chr.to.int$ -- 0
+cite$ -- 81
+duplicate$ -- 2259
+empty$ -- 3250
+format.name$ -- 1247
+if$ -- 15661
+int.to.chr$ -- 0
+int.to.str$ -- 80
+missing$ -- 0
+newline$ -- 1063
+num.names$ -- 322
+pop$ -- 1733
+preamble$ -- 1
+purify$ -- 160
+quote$ -- 0
+skip$ -- 5448
+stack$ -- 0
+substring$ -- 3939
+swap$ -- 1308
+text.length$ -- 143
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 4288
+warning$ -- 1
+while$ -- 428
+width$ -- 0
+write$ -- 1353
+(There was 1 warning)

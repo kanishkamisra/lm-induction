@@ -1,0 +1,35 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[!ht]
+\centering
+% \resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}cp{10cm}p{3.5cm}@{}}
+\toprule
+\textbf{Notation} &
+  \textbf{Meaning} &
+  \textbf{Remarks} \\ \midrule
+$\concepts$ &
+  The set of all concepts in our experiments. These are also at the lowest level of the taxonomy---i.e., its leaf nodes. &
+  $|\concepts| = 521$ \\
+$\properties$ &
+  The set of all unique properties used in our experiments. &
+  $|\properties| = 3735$ \\
+$\positives_{P_i}$ &
+  The set of concepts that possess the property $P_i$. &
+  $\positives_{P_i} \subset \concepts, |\positives_{P_i}| = k$ \\
+$\leftovers_{P_i}$ &
+  The set of concepts that do not possess the property $P_i$, i.e., $\leftovers_{P_i} = \concepts - \positives_{P_i}$ &
+  $|\leftovers_{P_i}| = 521 - k$ \\
+$\negsamp(\leftovers_{P_i}, k)$ &
+  A function that extracts $k$ negative samples from $\leftovers_{P_i}$ using the method described in \Cref{alg:propjudgdataset} (lines 6--9). &
+  $|\negsamp(\leftovers_{P_i}, k)| = k,$ \\ \bottomrule
+\end{tabular}%
+% }
+\caption{Notation for various artifacts involved in the paper.}
+\label{tab:notation}
+\end{table}
