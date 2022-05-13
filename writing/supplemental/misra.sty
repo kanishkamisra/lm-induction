@@ -1,0 +1,87 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{misra}
+  [2019/10/26 v0.01 NERT recommended defaults and macros for papers]
+  
+\usepackage{linguex}
+% LINGUEX COMMANDS
+\renewcommand{\firstrefdash}{} % don't put a hyphen between example number and subexample letter
+%{\renewcommand{\theExRBr}{}\LLast}--{\renewcommand{\theExLBr}{}\Last} % put range inside parentheses
+\renewcommand{\resetExdefaults}{%
+    \setlength{\Exlabelsep}{.25em}% was 1.3em, way too wide
+    \setlength{\Extopsep}{.66\baselineskip}%
+    \setlength{\SubSubExleftmargin}{1.9em}% was 2.4em, too wide
+    \setlength{\SubExleftmargin}{1.5em}% was 2em, too wide
+    \setlength{\Exindent}{0pt}%
+    \setlength{\Exlabelwidth}{4em}%
+    \setlength{\alignSubExnegindent}{\Exlabelsep}%
+    \ifalignSubEx\addtolength{\Exlabelsep}{.7em}%
+    \addtolength{\alignSubExnegindent}{.7em}\fi
+    \setlength{\Exredux}{-\baselineskip}%
+}
+
+\renewcommand{\theExLBr}{}
+\renewcommand{\theExRBr}{}
+\renewcommand{\theFnExLBr}{}
+\renewcommand{\theFnExRBr}{}
+
+\usepackage{nameref}
+\usepackage{cleveref}
+
+\crefformat{section}{\S#2#1#3}
+\crefformat{subsection}{\S#2#1#3}
+\crefformat{subsubsection}{\S#2#1#3}
+\crefformat{paragraph}{\P#2#1#3}
+\crefformat{subparagraph}{\P#2#1#3}
+%\crefmultiformat{part}{\S#2#1#3}{ and~\S#2#1#3}{, \S#2#1#3}{, and~\S#2#1#3}
+%\crefmultiformat{chapter}{\S#2#1#3}{ and~\S#2#1#3}{, \S#2#1#3}{, and~\S#2#1#3}
+\crefmultiformat{section}{\S#2#1#3}{ and~\S#2#1#3}{, \S#2#1#3}{, and~\S#2#1#3}
+\crefmultiformat{subsection}{\S#2#1#3}{ and~\S#2#1#3}{, \S#2#1#3}{, and~\S#2#1#3}
+\crefmultiformat{subsubsection}{\S#2#1#3}{ and~\S#2#1#3}{, \S#2#1#3}{, and~\S#2#1#3}
+\crefmultiformat{paragraph}{\P\P#2#1#3}{ and~#2#1#3}{, #2#1#3}{, and~#2#1#3}
+\crefmultiformat{subparagraph}{\P\P#2#1#3}{ and~#2#1#3}{, #2#1#3}{, and~#2#1#3}
+%\crefrangeformat{part}{\mbox{\S\S#3#1#4--#5#2#6}}
+%\crefrangeformat{chapter}{\mbox{\S\S#3#1#4--#5#2#6}}
+\crefrangeformat{section}{\mbox{\S\S#3#1#4--#5#2#6}}
+\crefrangeformat{subsection}{\mbox{\S\S#3#1#4--#5#2#6}}
+\crefrangeformat{subsubsection}{\mbox{\S\S#3#1#4--#5#2#6}}
+\crefrangeformat{paragraph}{\mbox{\P\P#3#1#4--#5#2#6}}
+\crefrangeformat{subparagraph}{\mbox{\P\P#3#1#4--#5#2#6}}
+% for \label[appsec]{...}
+\crefname{arg}{argument}{arguments}
+\Crefname{arg}{Argument}{Arguments}
+\crefname{ap}{appendix}{appendices}
+\Crefname{ap}{Appendix}{Appendices}
+\creflabelformat{arg}{#2\textup{(#1)}#3}
+\crefname{part}{Part}{Parts}
+\Crefname{part}{Part}{Parts}
+\crefname{chapter}{ch.}{ch.}
+\Crefname{chapter}{Ch.}{Ch.}
+\crefname{footnote}{fn.}{fn.}
+\Crefname{footnote}{Fn.}{Fn.}
+\crefname{figure}{figure}{figures}
+\crefname{subfigure}{figure}{figures}
+\Crefname{subfigure}{Figure}{Figures}
+\crefname{appsec}{appendix}{appendices}
+\Crefname{appsec}{Appendix}{Appendices}
+\crefname{algocf}{algorithm}{algorithms}
+\Crefname{algocf}{Algorithm}{Algorithms}
+
+% linguex
+\crefname{ExNo}{example}{examples}
+\Crefname{ExNo}{Example}{Examples}
+\crefname{SubExNo}{example}{examples}
+\Crefname{SubExNo}{Example}{Examples}
+\crefname{SubSubExNo}{example}{examples}
+\Crefname{SubSubExNo}{Example}{Examples}
+\crefformat{ExNo}{(#2#1#3)}
+\crefformat{SubExNo}{(#2#1#3)}
+\crefformat{SubSubExNo}{(#2#1#3)}
+\crefrangeformat{ExNo}{\mbox{(#3#1#4--#5#2#6)}}
+\crefrangeformat{SubExNo}{\mbox{(#3#1#4--#5#2#6)}}
+\crefrangeformat{SubSubExNo}{\mbox{(#3#1#4--#5#2#6)}}
+\crefmultiformat{ExNo}{(#2#1#3}{, #2#1#3)}{, #2#1#3}{, #2#1#3)}
+\crefmultiformat{SubExNo}{(#2#1#3}{, #2#1#3)}{, #2#1#3}{, #2#1#3)}
+\crefmultiformat{SubSubExNo}{(#2#1#3}{, #2#1#3)}{, #2#1#3}{, #2#1#3)}
+\crefrangemultiformat{ExNo}{(#3#1#4--#5#2#6}{, #3#1#4--#5#2#6)}{, #3#1#4--#5#2#6}{, #3#1#4--#5#2#6)}
+\crefrangemultiformat{SubExNo}{(#3#1#4--#5#2#6}{, #3#1#4--#5#2#6)}{, #3#1#4--#5#2#6}{, #3#1#4--#5#2#6)}
+\crefrangemultiformat{SubSubExNo}{(#3#1#4--#5#2#6}{, #3#1#4--#5#2#6)}{, #3#1#4--#5#2#6}{, #3#1#4--#5#2#6)}

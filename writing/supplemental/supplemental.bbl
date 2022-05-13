@@ -1,0 +1,304 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Bates%
+, M{\"a}chler%
+, Bolker%
+\BCBL {}\ \BBA {} Walker%
+}{%
+Bates%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+lme4}
+\APACinsertmetastar {%
+lme4}%
+\begin{APACrefauthors}%
+Bates, D.%
+, M{\"a}chler, M.%
+, Bolker, B.%
+\BCBL {}\ \BBA {} Walker, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Fitting Linear Mixed-Effects Models Using {lme4}}
+  {Fitting linear mixed-effects models using {lme4}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Statistical Software}{67}{1}{1--48}.
+\newblock
+\begin{APACrefDOI} \doi{10.18637/jss.v067.i01} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bhatia%
+\ \BBA {} Richie%
+}{%
+Bhatia%
+\ \BBA {} Richie%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+bhatia2020transformer}
+\APACinsertmetastar {%
+bhatia2020transformer}%
+\begin{APACrefauthors}%
+Bhatia, S.%
+\BCBT {}\ \BBA {} Richie, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Transformer Networks of Human Concept Knowledge}
+  {Transformer networks of human concept knowledge}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychological Review}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Da%
+\ \BBA {} Kasai%
+}{%
+Da%
+\ \BBA {} Kasai%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+da-kasai-2019-cracking}
+\APACinsertmetastar {%
+da-kasai-2019-cracking}%
+\begin{APACrefauthors}%
+Da, J.%
+\BCBT {}\ \BBA {} Kasai, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Cracking the Contextual Commonsense Code: Understanding
+  Commonsense Reasoning Aptitude of Deep Contextual Representations} {Cracking
+  the contextual commonsense code: Understanding commonsense reasoning aptitude
+  of deep contextual representations}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{Proceedings of the First Workshop on Commonsense
+  Inference in Natural Language Processing}} {{Proceedings of the First
+  Workshop on Commonsense Inference in Natural Language Processing}}\ (\BPGS\
+  1--12).
+\newblock
+\APACaddressPublisher{Hong Kong, China}{Association for Computational
+  Linguistics}.
+\newblock
+\begin{APACrefURL} \url{https://aclanthology.org/D19-6001} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.18653/v1/D19-6001} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Devereux%
+, Tyler%
+, Geertzen%
+\BCBL {}\ \BBA {} Randall%
+}{%
+Devereux%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+devereux2014centre}
+\APACinsertmetastar {%
+devereux2014centre}%
+\begin{APACrefauthors}%
+Devereux, B\BPBI J.%
+, Tyler, L\BPBI K.%
+, Geertzen, J.%
+\BCBL {}\ \BBA {} Randall, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{The Centre for Speech, Language and the Brain (CSLB)
+  concept property norms}} {{The Centre for Speech, Language and the Brain
+  (CSLB) concept property norms}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{{Behavior Research Methods}}{46}{4}{1119--1127}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Forbes%
+, Holtzman%
+\BCBL {}\ \BBA {} Choi%
+}{%
+Forbes%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+forbes2019neural}
+\APACinsertmetastar {%
+forbes2019neural}%
+\begin{APACrefauthors}%
+Forbes, M.%
+, Holtzman, A.%
+\BCBL {}\ \BBA {} Choi, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Do Neural Language Representations Learn Physical
+  Commonsense?}} {{Do Neural Language Representations Learn Physical
+  Commonsense?}}{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{Proceedings of the 41st Annual Meeting of the Cognitive
+  Science Society}.} {{Proceedings of the 41st Annual Meeting of the Cognitive
+  Science Society}.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Grice%
+}{%
+Grice%
+}{%
+{\protect \APACyear {1989}}%
+}]{%
+grice1989studies}
+\APACinsertmetastar {%
+grice1989studies}%
+\begin{APACrefauthors}%
+Grice, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1989}.
+\newblock
+\APACrefbtitle {Studies in the Way of Words} {Studies in the way of words}.
+\newblock
+\APACaddressPublisher{}{Harvard University Press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kuznetsova%
+, Brockhoff%
+\BCBL {}\ \BBA {} Christensen%
+}{%
+Kuznetsova%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+lmertest}
+\APACinsertmetastar {%
+lmertest}%
+\begin{APACrefauthors}%
+Kuznetsova, A.%
+, Brockhoff, P\BPBI B.%
+\BCBL {}\ \BBA {} Christensen, R\BPBI H\BPBI B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{lmerTest} Package: Tests in Linear Mixed Effects
+  Models} {{lmerTest} package: Tests in linear mixed effects models}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Statistical Software}{82}{13}{1--26}.
+\newblock
+\begin{APACrefDOI} \doi{10.18637/jss.v082.i13} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lucy%
+\ \BBA {} Gauthier%
+}{%
+Lucy%
+\ \BBA {} Gauthier%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+lucy-gauthier-2017-distributional}
+\APACinsertmetastar {%
+lucy-gauthier-2017-distributional}%
+\begin{APACrefauthors}%
+Lucy, L.%
+\BCBT {}\ \BBA {} Gauthier, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Are Distributional Representations Ready for the Real
+  World? Evaluating Word Vectors for Grounded Perceptual Meaning} {Are
+  distributional representations ready for the real world? evaluating word
+  vectors for grounded perceptual meaning}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the First Workshop on Language Grounding
+  for Robotics} {Proceedings of the first workshop on language grounding for
+  robotics}\ (\BPGS\ 76--85).
+\newblock
+\APACaddressPublisher{Vancouver, Canada}{Association for Computational
+  Linguistics}.
+\newblock
+\begin{APACrefURL} \url{https://aclanthology.org/W17-2810} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.18653/v1/W17-2810} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Miller%
+}{%
+Miller%
+}{%
+{\protect \APACyear {1995}}%
+}]{%
+miller1995wordnet}
+\APACinsertmetastar {%
+miller1995wordnet}%
+\begin{APACrefauthors}%
+Miller, G\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1995}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{WordNet: a lexical database for English}} {{WordNet: a
+  lexical database for English}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{{Communications of the ACM}}{38}{11}{39--41}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wu%
+\ \BBA {} Palmer%
+}{%
+Wu%
+\ \BBA {} Palmer%
+}{%
+{\protect \APACyear {1994}}%
+}]{%
+wu-palmer-1994-verb}
+\APACinsertmetastar {%
+wu-palmer-1994-verb}%
+\begin{APACrefauthors}%
+Wu, Z.%
+\BCBT {}\ \BBA {} Palmer, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1994}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Verb Semantics and Lexical Selection}} {{Verb Semantics
+  and Lexical Selection}}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {{32nd Annual Meeting of the Association for
+  Computational Linguistics}} {{32nd Annual Meeting of the Association for
+  Computational Linguistics}}\ (\BPGS\ 133--138).
+\newblock
+\APACaddressPublisher{Las Cruces, New Mexico, USA}{Association for
+  Computational Linguistics}.
+\newblock
+\begin{APACrefURL} \url{https://aclanthology.org/P94-1019} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.3115/981732.981751} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
